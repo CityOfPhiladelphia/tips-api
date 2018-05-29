@@ -40,7 +40,7 @@ FLASK_ENV=development
 
 If you're on an environment that supports Bash, there's a script provided
 that does all this for you. Just `cp dev_env.sample.sh dev_env.sh`, edit the
-file, and insert the actual TIPS web service URL.
+file, and insert the actual TIPS web service URL. Then run `. dev_env.sh`.
 
 ### Running
 
