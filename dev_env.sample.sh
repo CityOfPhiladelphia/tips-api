@@ -1,3 +1,3 @@
-FLASK_APP=app.py
-FLASK_ENV=development
-TIPS_URL=
+export FLASK_APP=app.py
+export FLASK_ENV=development
+export TIPS_URL=
