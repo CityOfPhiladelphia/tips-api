@@ -53,19 +53,21 @@ def infer_full_year(suffix):
 
     return int(full_year)
 
+# takes a MM/DD/YYYY date and converts it to a python datetime object
+def datetime_from_string(date_str):
+    return datetime.datetime.strptime(date_str, '%m/%d/%Y')
+    
 # this takes a tips response dictionary and cleans up the formatting
 def format_data(raw_data):
     data = raw_data['Output']
+
+    from pprint import pprint
 
     # format property info
     property_info = camel_case_dict_keys(data['PROPERTY-INFO'])
     property_info['address'] = property_info.pop('propertyAddress')
 
-    data_formatted = {
-        'accountNum': data['BRT-NO'],
-        'property': property_info,
-    }
-
+    # handle year objects (these represent tax balances per year)
     years = []
 
     for i in range(1, 40):
@@ -99,7 +101,21 @@ def format_data(raw_data):
         }
         years.append(year_data_formatted)
 
-    data_formatted['years'] = years
+    # convert dates to datetime objects
+    penalty_calc_date = property_info['penaltyCalcDate']
+    penalty_calc_date_datetime = datetime_from_string(penalty_calc_date)
+    property_info['penaltyCalcDate'] = penalty_calc_date_datetime
+
+    posted_date = data['PAYMENTS-POSTED-THRU']
+    posted_date_datetime = datetime_from_string(posted_date)
+
+    # form response
+    data_formatted = {
+        'accountNum': data['BRT-NO'],
+        'property': property_info,
+        'lastPaymentPostedDate': posted_date_datetime,
+        'years': years
+    }
 
     return data_formatted
 
