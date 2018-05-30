@@ -4,7 +4,7 @@
 ENV=prod
 # note: see below for guidelines on setting # of gunicorn workers
 # http://docs.gunicorn.org/en/stable/design.html#how-many-workers
-RUN_CMD="gunicorn -w 3 -D wsgi:app "
+RUN_CMD="gunicorn -w 3 wsgi:app"
 
 # dev mode
 if [[ "$1" == "--dev" ]]; then
