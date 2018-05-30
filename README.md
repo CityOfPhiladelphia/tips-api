@@ -32,7 +32,7 @@ FLASK_APP=app.py
 TIPS_URL=<insert actual TIPS URL here>
 ```
 
-For more verbose debugging:
+For a better developer experience:
 
 ```bash
 FLASK_ENV=development
