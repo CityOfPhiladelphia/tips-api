@@ -8,6 +8,7 @@ flask = "*"
 requests = "*"
 xmltodict = "*"
 flask-cors = "*"
+gunicorn = "*"
 
 [dev-packages]
 
