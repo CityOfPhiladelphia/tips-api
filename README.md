@@ -63,7 +63,7 @@ If you want to test the production deployment, just remove the `--dev` flag:
 ### Testing
 
 To try out the API, open your browser and navigate to
-`http://127.0.0.1:5000/account/883309050`. You should see the API response for
+`http://127.0.0.1:8000/account/883309050`. You should see the API response for
 1234 Market St.
 
 ## Deployment
