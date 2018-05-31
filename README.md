@@ -8,6 +8,7 @@ estate tax balances to public, client-side web applications.
 
 ### Requirements
 
+- An operating system that supports [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) (such as macOS or Linux; should work on Windows 10 using the [Linux subsystem](https://docs.microsoft.com/en-us/windows/wsl/install-win10))
 - Python 3
 - [pipenv](https://docs.pipenv.org/)
 - You must be connected to the City network to access TIPS
