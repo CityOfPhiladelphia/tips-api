@@ -85,7 +85,11 @@ def format_data(raw_data):
         # don't push any years beyond the current year
         current_year = datetime.datetime.now().year
 
-        if year is None or current_year < year:
+        # if year is None or current_year < year:
+        if year is None:
+            break
+        
+        if current_year < year and year != 2034:
             break
 
         year_data_formatted = {
