@@ -88,8 +88,10 @@ def format_data(raw_data):
         # if year is None or current_year < year:
         if year is None:
             break
-        
-        if current_year < year and year != 2034:
+
+        # Software AG api appears to start returning data for next year on Dec. 1
+        # TIPS RTTAN452 uses year 2034 as MISC placeholder
+        if current_year + 1 < year and year != 2034:
             break
 
         year_data_formatted = {
