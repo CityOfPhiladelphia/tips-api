@@ -32,3 +32,9 @@ def account(account_num):
     r = get_account(event, None)
 
     return jsonify(r)
+
+@app.route('/health-check')
+def health_check():
+    return jsonify({
+        'message': 'healthy'
+    })
