@@ -70,7 +70,7 @@ def format_data(raw_data):
     # handle year objects (these represent tax balances per year)
     years = []
 
-    for i in range(1, 40):
+    for i in range(1, 41):
         # ensure index is always two digits
         i_padded = '0{}'.format(i) if i < 10 else i
 
