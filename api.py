@@ -69,7 +69,9 @@ def format_data(raw_data):
 
     # handle year objects (these represent tax balances per year)
     years = []
-
+    
+    # The "to" number in the range must be increased by 1 each year. 
+    # TODO: refactor to go off of response keys instead of a constant max range. 
     for i in range(1, 41):
         # ensure index is always two digits
         i_padded = '0{}'.format(i) if i < 10 else i
